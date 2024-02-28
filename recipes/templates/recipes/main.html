@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Recipe App Recipes</title>
+    {% load static %}
+</head>
+
+<body>
+    <h1 style="text-align: center;">Recipes List</h1>
+    <table style="margin: 0px auto;" border="1" cellpadding="5" cellspacing="5">    
+        {% comment%} start of table  {% endcomment%}
+        <tr> 
+            <td>Recipe Names</td>       
+            <td>Recipes Images</td>
+        </tr>
+        {% for object in object_list %}
+        <tr>
+            <td align="center"><a class="recipe_name" href="{{object.get_absolute_url}}">
+                    {{object.name}}
+                </a></td> {% comment%} print the name of recipe {% endcomment%}
+            <td>
+                <center><img src="{{object.pic.url}}" width="250" height="250" /></center>
+            </td> 
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>

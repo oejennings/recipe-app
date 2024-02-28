@@ -20,3 +20,9 @@ class RecipeModelTest(TestCase):
     def test_difficulty_calculation(self):
         recipe = Recipe.objects.get(id=1)
         self.assertEqual(recipe.calculate_difficulty(), 'Easy')
+
+    def test_get_absolute_url(self):
+        # get absolute_url takes you to the detail page of the first recipe
+        recipe = Recipe.objects.get(id=1)
+        # Loads to the url /recipes/list/1
+        self.assertEqual(recipe.get_absolute_url(), '/recipes/list/1')

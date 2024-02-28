@@ -4,7 +4,9 @@
    <title>
        Recipes Home
    </title>
-   <body class="body" style="font-size: larger; text-align: center;">
-       Welcome to Our Recipes App
+   {% load static %}
+   <body class="body" style="text-align: center;">
+       <h1>Welcome to Our Recipes App</h1>
+       <img src="{% static 'recipes/images/home.jpg' %}" alt="home" width="700" height="400">
    </body>
 </html>
