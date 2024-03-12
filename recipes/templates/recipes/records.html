@@ -3,15 +3,26 @@
     <head>
         <title>RecipeApp | Recipes</title>
         {% load static %}
+        <link rel="stylesheet" href="{% static 'recipes/css/styles.css' %}">
     </head>
-    <body>
+    <body class="body">
+        <div class="nav-bar">
+            <div>
+                <a href="/recipes/list" class="button"> Home </a>
+            </div>
+            <div>
+                <a href ="/recipes/search" class="button"> Recipe Records </a>  
+            </div>
+            <div>
+                <a href ="{%url 'logout' %}" class="button"> Logout </a>
+            </div>
+        </div>
         <h1 style="text-align: center;"> Search Recipe Records </h1>
-       
         <hr>
-        <form action="" method="POST">
+        <form action="" method="POST" style="margin-bottom: 20px;">
             {% csrf_token %}
             {{form}}
-            <button type="submit" >search</button>
+            <button type="submit" >Search</button>
         </form> 
         <br>
             {% if recipe_df %}
@@ -21,11 +32,5 @@
             {% else %}
                 <h3> no data</h3>
             {% endif %}
-         <div style="text-align: right;">
-            <a href="/recipes/list"> Back </a>
-        </div>
-        <div style="text-align: right;">
-            <a href ="{%url 'logout' %}" > Logout </a>
-        </div>
     </body>
 </html>

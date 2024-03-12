@@ -3,8 +3,10 @@
 
     <head>
         <title>Recipe App Login</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'recipes/css/styles.css' %}">
     </head>
-    <body style="text-align: center;">
+    <body class="body" style="text-align: center;">
         <h1>Login</h1>
 
         {% comment %} check for error message {% endcomment %}
@@ -28,7 +30,9 @@
 
             {% comment %} add button {% endcomment %}
             <br>
-            <button type="submit" class="login_btn">Login</button>
+            <button type="submit" class="button">Login</button>
+
+            <a href="/" class="button"> Cancel </a>
         </form>
     </body>
 

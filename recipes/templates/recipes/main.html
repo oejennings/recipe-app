@@ -4,18 +4,44 @@
 <head>
     <title>Recipe App Recipes</title>
     {% load static %}
+    <link rel="stylesheet" href="{% static 'recipes/css/styles.css' %}">
+    <script src="{% static 'recipes/js/home.js' %}"></script>
 </head>
 
-<body>
-    <div style="text-align: right;">
-        <a href ="/recipes/search" > Recipe Records </a>
+<body class="body">
+    <div class="nav-bar">
+        
+        <div class="search_box" style="margin: 30%;">
+            <form action="" method="GET" class="form">
+                {% csrf_token %}
+                <input type="text" name="recipe_search" class="form_search_bar" id="searchbar"
+                    placeholder="Search Recipes..." onkeyup="search_recipe()" />
+            </form>
+            <br>
+            <div class="search_results" autocomplete="off" style="display: none;">
+                {% for object in object_list %}
+                <p class="recipe_searched">
+                    <a class="recipe_name"
+                        style="font-size: 20px; color: black; text-decoration: none;"
+                        href="{{object.get_absolute_url}}"> {{object.name}} </a>
+                </p>
+                {% endfor %}
+            </div>
+        </div>
+        <div>
+          <a href ="/recipes/search" class="button"> Recipe Records </a>  
+        </div>
+        <div>
+            <a href ="{%url 'logout' %}" class="button"> Logout </a>
+        </div>
+        
     </div>
-    <h1 style="text-align: center;">Recipes List</h1>
-    <table style="margin: 0px auto;" border="1" cellpadding="5" cellspacing="5">    
+    <h1 style="display: flex; justify-content: center;">Recipes List</h1>
+    <table style="margin: 0px auto;" border="10" bordercolor= "green" cellpadding="5" cellspacing="5" width="900" height="250" justify-content="right">    
         {% comment%} start of table  {% endcomment%}
         <tr> 
-            <td>Recipe Names</td>       
-            <td>Recipes Images</td>
+            <td style="font-family: sans-serif; font-size: x-large;" align="center" >Recipe Names</td>       
+            <td style="font-family: sans-serif; font-size: x-large;" align="center">Recipes Images</td>
         </tr>
         {% for object in object_list %}
         <tr>
@@ -28,9 +54,6 @@
         </tr>
         {% endfor %}
     </table>
-    <div style="text-align: right;">
-        <a href ="{%url 'logout' %}" > Logout </a>
-    </div>
     
 </body>
 

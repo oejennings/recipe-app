@@ -3,13 +3,21 @@
 
     <head>
         <title>RecipeApp | Logout</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'recipes/css/styles.css' %}">
     </head>
-    {% load static %}
-    <body style="text-align: center;">
+    
+    <body class="body" style="text-align: center;">
+        
         <h1>Successfully Logged Out</h1>
         <img src="{% static 'recipes/images/home.jpg' %}" alt="home" width="700" height="400">
         <h3>Log back in:</h3>
-        <a class="login_btn" href="{%url 'login' %}"> Login </a>
+        <div>
+            <a class="button" href="{%url 'login' %}"> Login </a>
+             <a href="/" class="button"> Home </a>
+        </div>
+
+       
     </body>
 
 </html>

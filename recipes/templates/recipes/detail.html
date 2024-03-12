@@ -4,9 +4,21 @@
     <head>
         <title>RecipeApp | Details </title>
         {% load static %}
+        <link rel="stylesheet" href="{% static 'recipes/css/styles.css' %}">
     </head>
-    <body>
-        <div>
+    <body class="body">
+        <div class="nav-bar">
+            <div>
+                <a href="/recipes/list" class="button"> Home </a>
+            </div>
+            <div>
+                <a href ="/recipes/search" class="button"> Recipe Records </a>  
+            </div>
+            <div>
+                <a href ="{%url 'logout' %}" class="button"> Logout </a>
+            </div>
+        </div>
+        <div class="details">
             <h1 style="text-align: center; margin-top: 100px;">Details: {{object.name}}</h1>
     
                 <div style="text-align: center;">
@@ -18,11 +30,8 @@
                     <br>
                     <b>Ingredients: </b> {{object.ingredients}} <br>
                     <br>
-                    <b>Description: </b> {{object.description}} <br>
-                    <br>
                     <img src="{{object.pic.url}}" width="500px" height="500px" />
                     <br>
-                    <a href="/recipes/list"> Back </a>
                 </div>
         </div>
     </body>
