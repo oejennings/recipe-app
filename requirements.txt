@@ -22,4 +22,4 @@ typing_extensions==4.9.0
 tzdata==2024.1
 whitenoise==6.6.0
 zipp==3.17.0
-`psycopg2-binary==2.8.6`
+psycopg2-binary==2.8.6
