@@ -11,7 +11,7 @@
 <body class="body">
     <div class="nav-bar">
         
-        <div class="search_box" style="margin: 30%;">
+        <div class="search_box" style="margin: 20%;">
             <form action="" method="GET" class="form">
                 {% csrf_token %}
                 <input type="text" name="recipe_search" class="form_search_bar" id="searchbar"
@@ -32,8 +32,15 @@
           <a href ="/recipes/search" class="button"> Recipe Records </a>  
         </div>
         <div>
+            <a href="{% url 'recipes:create' %}" class="button"> Create Recipe</a>
+        </div>
+        <div>
+            <a href="{% url 'recipes:about' %}" class="button"> About Me</a>
+        </div>
+        <div>
             <a href ="{%url 'logout' %}" class="button"> Logout </a>
         </div>
+        
         
     </div>
     <h1 style="display: flex; justify-content: center;">Recipes List</h1>

@@ -1,11 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 #to protect class-based view
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView, DetailView  #to display lists
 from .models import Recipe
+from django.contrib import messages
 
-from .forms import RecipesSearchForm
+from .forms import RecipesSearchForm, CreateRecipeForm
 import pandas as pd
 from .utils import get_recipename_from_id, get_chart
 
@@ -15,6 +16,9 @@ from .utils import get_recipename_from_id, get_chart
 
 def home(request):
     return render(request, 'recipes/recipes_home.html')
+
+def about(request):
+    return render(request, "recipes/about.html")
 
 
 class RecipeListView(LoginRequiredMixin, ListView):           #class-based view
@@ -90,3 +94,19 @@ def records(request):
    }
     # load the recipes/records.html page using the data that you just prepared
    return render(request, 'recipes/records.html', context)
+
+@login_required
+def create_view(request):
+    if request.method == "POST":
+        create_form = CreateRecipeForm(request.POST, request.FILES)
+        if create_form.is_valid():
+            create_form.save()
+            messages.success(request, "Recipe created successfully.")
+            return redirect("create")
+    else:
+        create_form = CreateRecipeForm()
+
+    context = {"create_form": create_form}
+    return render(request, "recipes/create.html", context)
+
+   

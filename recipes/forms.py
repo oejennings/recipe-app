@@ -1,4 +1,5 @@
 from django import forms
+from .models import Recipe
 
 CHART__CHOICES = (          #specify choices as a tuple
    ('#1', 'Bar chart'),    # when user selects "Bar chart", it is stored as "#1"
@@ -19,3 +20,9 @@ DIFFIC__CHOICES = (  # specify choices as a tuple
 class RecipesSearchForm(forms.Form): 
    recipe_diff = forms.ChoiceField(choices=DIFFIC__CHOICES)
    chart_type = forms.ChoiceField(choices=CHART__CHOICES)
+
+
+class CreateRecipeForm(forms.ModelForm):
+    class Meta:
+        model = Recipe
+        fields = ["name", "cooking_time", "ingredients", "pic"]

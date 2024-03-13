@@ -96,3 +96,22 @@
     font-family: sans-serif;
 }
 
+.form-field label {
+    display: inline-block;
+    width: 150px; /* Adjust as needed for proper alignment */
+    text-align: right;
+    margin-right: 10px;
+  }
+
+  .form-field input,
+  .form-field select {
+    width: 200px; /* Adjust as needed for proper alignment */
+  }
+
+  .form-field select {
+    width: 208px;
+    height: 25px;
+    appearance: none; /* Remove default styling in modern browsers */
+  }
+
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>
+        About Me 
+    </title>
+
+    {% load static %}
+            <link rel="stylesheet" href="{% static 'recipes/css/styles.css' %}">
+ </head>
+   <body class="body" style="text-align: center;">
+    <div class="nav-bar">
+        <div>
+            <a href="/recipes/list" class="button"> Home </a>
+        </div>
+        <div>
+            <a href ="/recipes/search" class="button"> Recipe Records </a>  
+        </div>
+        <div>
+            <a href ="{%url 'logout' %}" class="button"> Logout </a>
+        </div>
+    </div>
+    <h1 >Get to Know Me:</h1>
+    <p style="font-size: large;">
+        My name is Olivia Jennings. I am a web developer from New York. I enjoy reading, amazing food, and traveling. 
+    </p>
+    <h1>Contact</h1>
+            <a href="tel:+1(954)562-0046">Telephone Number: (954) 562-0046</a>
+            <br>
+            <a href="mailto:oejennings96@bellsouth.net">Email: oejennings96@bellsouth.net</a>
+            <br>
+            <a href="mailto:oejennings96@bellsouth.net">Contact Me</a>   
+   </body>
+   <footer class="footer">
+    <h1>Find me on</h1>
+    <div>
+        <a href="https://github.com/oejennings"> <img src="{% static 'recipes/images/github.svg' %}" alt="Github" height="30"></a>
+        <a href="https://www.linkedin.com/in/olivia-jennings-b1b647231/" > <img src="{% static 'recipes/images/linkedin.svg' %}" alt="Linkedin"></a>
+    </div>
+</footer>
+</html>

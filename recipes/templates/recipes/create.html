@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title> Create Recipe </title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'recipes/css/styles.css' %}">
+    </head>
+    <body class="body">
+        <div class="nav-bar">
+            <div>
+                <a href="/recipes/list" class="button"> Home </a>
+            </div>
+            <div>
+                <a href ="/recipes/search" class="button"> Recipe Records </a>  
+            </div>
+            <div>
+                <a href ="{%url 'logout' %}" class="button"> Logout </a>
+            </div>
+        </div>
+        <form
+            action=""
+            method="POST"
+            class="form_data"
+            enctype="multipart/form-data"
+        >
+            {% csrf_token %}
+            <div class="form-field">
+                <label for="id_name">Name:</label>
+                {{ create_form.name }}
+            </div>
+            <div class="form-field">
+                <label for="id_cooking_time">Cooking time (min):</label>
+                {{ create_form.cooking_time }}
+            </div>
+            <div class="form-field">
+                <label for="id_ingredients">Ingredients:</label>
+                {{ create_form.ingredients }}
+            </div>
+            <div class="form-field">
+                <label for="id_pic">Picture:</label>
+                {{ create_form.pic }}
+            </div>
+            <button type="submit" class="button">Create</button>
+        </form>
+    </body>
+</html>
