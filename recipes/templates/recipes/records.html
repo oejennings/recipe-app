@@ -11,10 +11,10 @@
                 <a href="/recipes/list" class="button"> Home </a>
             </div>
             <div>
-                <a href ="/recipes/search" class="button"> Recipe Records </a>  
+                <a href="{% url 'recipes:create' %}" class="button"> Create Recipe</a>
             </div>
             <div>
-                <a href="{% url 'recipes:create' %}" class="button"> Create Recipe</a>
+                <a href="{% url 'recipes:about' %}" class="button"> About Me</a>
             </div>
             <div>
                 <a href ="{%url 'logout' %}" class="button"> Logout </a>
