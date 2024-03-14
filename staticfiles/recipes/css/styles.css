@@ -1,0 +1,117 @@
+.body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    background-color: beige;
+}
+
+.nav-bar {
+    width: 80vw;
+    height: 10vh;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    background-color: lightgreen;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.form_search_bar {
+    position:absolute;
+    float: left;
+    left: 15%;
+    /* margin: 7px; */
+    width: 300px;
+    height: 25px;
+    border-radius: 25px;
+    border: none;
+    font-size: 20px;
+}
+
+.form_search_input,
+.form_search {
+    background-color: beige;
+    height: 14px;
+    border: none;
+    border-radius: 5px;
+    width: 200px;
+    padding: 10px;
+    position: absolute;
+    left: 15%;
+}
+
+.form_data {
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.search_results {
+    background-color: rgb(232, 211, 187);
+    border-radius: 7px;
+    font-size: 10px;
+    width: 175px;
+    padding: 20px;
+    position: absolute;
+    left: 15%;
+    top: 10%;
+    margin: 0 auto;
+}
+
+.button {
+    width: 100px;
+    font-size: 16px;
+    background-color: green;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    text-align: center;
+    font-family: sans-serif;
+    margin: 10px;
+}
+
+.button:hover {
+    filter: brightness(125%);
+    transition: 200ms;
+}
+
+.details {
+    width: 55%;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 5px 10px 15px;
+    margin: 0 auto;
+    margin-top: 10vh;
+    font-family: sans-serif;
+    background-color: white;
+  }
+
+  .recipe_name {
+    color: black;
+    font-size: 25px;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+.form-field label {
+    display: inline-block;
+    width: 150px; /* Adjust as needed for proper alignment */
+    text-align: right;
+    margin-right: 10px;
+  }
+
+  .form-field input,
+  .form-field select {
+    width: 200px; /* Adjust as needed for proper alignment */
+  }
+
+  .form-field select {
+    width: 208px;
+    height: 25px;
+    appearance: none; /* Remove default styling in modern browsers */
+  }
+
+
